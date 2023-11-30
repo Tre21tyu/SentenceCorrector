@@ -1,94 +1,119 @@
+// Import the 'diffChars' function from the 'diff' module
 import { diffChars } from "diff";
 
+// Function to compare words in two sentences and calculate the percentage of differences
 function compareWords(original, modified) {
-  // Split strings into words 
-  const originalWords = original.split(" "); 
+  // Split the input sentences into arrays of words
+  const originalWords = original.split(" ");
   const modifiedWords = modified.split(" ");
 
-  // Compare words and calculate % changed
-  const differences = []; 
+  // Initialize an array to store word differences
+  const differences = [];
+
+  // Loop through each word in the original sentence
   originalWords.forEach((word, index) => {
+    // Check if there is a corresponding word in the modified sentence
     if (index < modifiedWords.length) {
       const modifiedWord = modifiedWords[index];
       let diffPercentage = 0;
+
+      // Compare the words and calculate the percentage of differences
       if (word !== modifiedWord) {
         const diffCount = Math.abs(word.length - modifiedWord.length);
-        diffPercentage = (diffCount / word.length) * 100; 
+        diffPercentage = (diffCount / word.length) * 100;
       }
+
+      // Store the word differences in the array
       differences.push({
         originalWord: word,
-        modifiedWord, 
-        diffPercentage 
+        modifiedWord,
+        diffPercentage,
       });
     } else {
-      // Extra word at the end of original
+      // Handle the case of an extra word at the end of the original sentence
       differences.push({
         originalWord: word,
-        modifiedWord: null, 
-        diffPercentage: 100  
+        modifiedWord: null,
+        diffPercentage: 100,
       });
     }
   });
 
-  // Return word differences
-  return differences; 
+  // Return the array of word differences
+  return differences;
 }
 
+// Function to format and highlight incorrectly spelled words in red
 function redIncorrect(originalSentence, modifiedSentence) {
-
+  // Get the word differences between the original and modified sentences
   const wordDiffs = compareWords(originalSentence, modifiedSentence);
-  
+
+  // Initialize an empty string to store the formatted result
   let result = "";
 
-  wordDiffs.forEach(diff => {
-
-    // Same word level diff logic as before
-
+  // Loop through each word difference
+  wordDiffs.forEach((diff) => {
+    // Append a space to the result string (current implementation does not modify the result)
     result += " ";
   });
 
-  // Post-process to handle inserts/edits  
+  // Initialize variables to track removed text
   let currentRemove = "";
+
+  // Get character differences between the original and modified sentences
   const diffs = diffChars(originalSentence, modifiedSentence);
 
-  diffs.forEach(part => {
+  // Loop through each character difference
+  diffs.forEach((part) => {
+    // If a character is removed, add it to the 'currentRemove' variable
     if (part.removed) {
-      currentRemove += part.value; 
+      currentRemove += part.value;
     } else if (part.added && currentRemove !== "") {
-      // Convert to replace
+      // If an added character is encountered after removed characters,
+      // format the removed characters with strikethrough and red color
       result += `<s style="text-decoration: line-through; color: red;">${currentRemove}</s>`;
       currentRemove = "";
     } else {
+      // If there are no removed characters, simply add the current character to the result
       if (currentRemove !== "") {
         result += `<s style="text-decoration: line-through; color: red;">${currentRemove}</s>`;
         currentRemove = "";
       }
+
+      // If the character is added, include it in the result
       if (part.added) {
-        result += part.value;  
+        result += part.value;
       } else {
         result += part.value;
       }
     }
   });
 
+  // If there are remaining removed characters, format them and add to the result
   if (currentRemove !== "") {
     result += `<s style="text-decoration: line-through; color: red;">${currentRemove}</s>`;
   }
 
+  // Return the formatted result
   return result;
 }
 
+// Function to format and highlight correctly spelled words in green
 function greenCorrect(templateSentence, templateSentenceCopy) {
-  // Compute the differences between the two strings
+  // Get character differences between the two sentences
   const diffs = diffChars(templateSentence, templateSentenceCopy);
-  // Initialize the result string
+
+  // Initialize an empty string to store the formatted result
   let result = "";
 
+  // Loop through each character difference
   for (const part of diffs) {
+    // If a character is added, format it in green
     if (part.added) {
       if (part.value.trim() === "") {
         // Identify consecutive spaces using a regular expression
         const consecutiveSpacesRegex = / +/g;
+
         // Replace consecutive spaces with the green underscore format
         const many_space = part.value.replace(
           consecutiveSpacesRegex,
@@ -98,24 +123,29 @@ function greenCorrect(templateSentence, templateSentenceCopy) {
             )}</span>`;
           }
         );
+
+        // Add the formatted text to the result
         result += many_space;
       } else {
-        // Added text, check if it's a space or other character
+        // If added text is not a space, format it in green
         const formattedText = `<span style="color: #00ff00;">${part.value}</span>`;
         result += formattedText;
       }
     } else if (!part.removed) {
-      // Unchanged text, add it as-is
+      // If the character is unchanged, add it to the result as-is
       result += part.value;
     }
   }
 
+  // Return the formatted result
   return result;
 }
 
+// Function to combine the redIncorrect and greenCorrect results with line break
 function textModify(red_result, green_result) {
   const result = `${redIncorrect(red_result, green_result)}<br>${greenCorrect(red_result, green_result)}`;
   return result;
 }
 
+// Export the textModify function as the default export of the module
 export default textModify;
