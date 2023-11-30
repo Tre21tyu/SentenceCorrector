@@ -1,0 +1,60 @@
+<mxfile host="Electron" modified="2023-10-14T20:39:43.488Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.2 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="vnOsMZP8UTXgsQMf_aoF" version="22.0.2" type="device">
+  <diagram name="Page-1" id="u69dDJcronk-Jtj4rjDv">
+    <mxGraphModel dx="1247" dy="769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s7dHtQxdCqgNDob3HLcq-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="s7dHtQxdCqgNDob3HLcq-1" target="s7dHtQxdCqgNDob3HLcq-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s7dHtQxdCqgNDob3HLcq-1" value="START RUNTIME" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="365" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s7dHtQxdCqgNDob3HLcq-5" value="User presser `lock` button" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="s7dHtQxdCqgNDob3HLcq-2" target="s7dHtQxdCqgNDob3HLcq-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s7dHtQxdCqgNDob3HLcq-2" value="`Template sentence field becomes unlocked if it isn&#39;t already. User enters a sentence into `Template sentence field`" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="362" y="200" width="125.5" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="s7dHtQxdCqgNDob3HLcq-9" value="User presses `Finalize` button" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="s7dHtQxdCqgNDob3HLcq-4" target="s7dHtQxdCqgNDob3HLcq-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s7dHtQxdCqgNDob3HLcq-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=baseDash;endFill=0;" edge="1" parent="1" source="s7dHtQxdCqgNDob3HLcq-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="404.7142857142858" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s7dHtQxdCqgNDob3HLcq-4" value="`Template sentence&#39; field becomes read only. Text in this field gets copied into `Template sentence copy`. User can make edits" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="353" y="360" width="145" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s7dHtQxdCqgNDob3HLcq-17" value="User presses `export` button`" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="s7dHtQxdCqgNDob3HLcq-8" target="s7dHtQxdCqgNDob3HLcq-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s7dHtQxdCqgNDob3HLcq-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=default;endArrow=baseDash;endFill=0;" edge="1" parent="1" source="s7dHtQxdCqgNDob3HLcq-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="549.7142857142858" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s7dHtQxdCqgNDob3HLcq-8" value="textModify() gets called on both template sentence and template sentence copy fields. The result is displayed in the read only field, `corrected sentence`" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="355.25" y="501" width="142.75" height="97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="s7dHtQxdCqgNDob3HLcq-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="s7dHtQxdCqgNDob3HLcq-16" target="s7dHtQxdCqgNDob3HLcq-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="695" />
+              <mxPoint x="600" y="255" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s7dHtQxdCqgNDob3HLcq-24" value="User presses the &lt;br&gt;`unlock` button" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="s7dHtQxdCqgNDob3HLcq-20">
+          <mxGeometry x="-0.0011" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s7dHtQxdCqgNDob3HLcq-16" value="exportSentences() function gets activated on both sentences as well as any notes/comments the user decided to put in the `comments` textarea of the applet.&amp;nbsp;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="351.59" y="640" width="150.07" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

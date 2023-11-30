@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "description": "",
+  "scripts": {
+    "start": "node script.js"
+  },
+  "dependencies": {
+    "diff": "^5.1.0"
+  }
+}

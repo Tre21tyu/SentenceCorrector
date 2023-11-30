@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public\styles.css">
+    <title>Sentence Editor</title>
+</head>
+<body>
+  <form id="myForm" action="/test" method="POST">
+    <label for="texto">Text:</label>
+    <input type="text" id="text1" name="text1">
+    <input type="text" id="text2" name="text2">
+    <button type="submit">Send</button>
+  </form>
+  <div id="result"></div>
+    <div class="container">
+        <div class="field">
+            <label for="template-sentence">Template Sentence:</label>
+            <input type="text" id="template-sentence">
+        </div>
+        <div class="field">
+            <label for="template-sentence-copy">Template Sentence Copy:</label>
+            <input type="text" id="template-sentence-copy" readonly>
+        </div>
+        <div class="field">
+            <label for="corrected-sentences">Corrected Sentences:</label>
+            <input type="text" id="corrected-sentences" readonly>
+        </div>
+        <div class="field">
+            <label for="comments">Comments:</label>
+            <textarea id="comments"></textarea>
+        </div>
+        <button id="confirm-lock-btn">Confirm & Lock</button>
+        <button id="unlock-btn" disabled>Unlock</button>
+        <button id="finalize-corrections-btn" style="display: none">Finalize Corrections</button>
+    </div>
+    <script src="script.js", type="module"></script>
+</body>
+</html>

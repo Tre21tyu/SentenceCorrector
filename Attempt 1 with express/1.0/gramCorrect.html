@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clipboard Sentence Editor</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>Clipboard Sentence Editor</h1>
+    <button id="pasteBtn">Paste from Clipboard</button>
+    <button id="copyBtn">Copy to Sentences</button>
+    <button id="finalizeBtn">Finalize Corrections</button>
+    <br />
+    <label for="sentenceField">Sentence:</label>
+    <input type="text" id="sentenceField" readonly />
+    <br />
+    <label for="correctionsField">Corrections:</label>
+    <input type="text" id="correctionsField" />
+    <br />
+    <label for="correctedSentenceField">Corrected Sentence:</label>
+    <input type="text" id="correctedSentenceField" readonly />
+    <br />
+    <label for="commentsField">Comments:</label>
+    <textarea id="commentsField"></textarea>
+    <br />
+    <button id="exportBtn">Export to Admonition</button>
+    <script src="script.js"></script>
+  </body>
+</html>

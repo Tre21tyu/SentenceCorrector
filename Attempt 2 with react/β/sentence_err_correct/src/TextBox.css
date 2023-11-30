@@ -1,0 +1,171 @@
+/* Sets the maximum width of the .text-box-container to 500 pixels */
+.text-box-container {
+  max-width: 500px;
+
+  /* Sets top and bottom margins to 50 pixels, and left and right margins to auto, centering the container horizontally */
+  margin: 50px auto;
+
+  /* Adds 20 pixels of padding inside the .text-box-container */
+  padding: 20px;
+
+  /* Sets the background color of the .text-box-container to #444 (dark gray) */
+  background-color: #444;
+
+  /* Rounds the corners of the .text-box-container to 10 pixels */
+  border-radius: 10px;
+
+  /* Adds a box shadow to the .text-box-container: horizontal and vertical offset of 0, blur radius of 20 pixels, and a color with 50% opacity */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+  /* Configures the .text-box-container to be a flex container with a column direction, aligning items (child elements) at the center horizontally */
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+/* Applies styling to all input elements */
+input {
+  /* Adds 5 pixels of margin around the input element */
+  margin: 5px;
+
+  /* Adds 8 pixels of padding inside the input element */
+  padding: 8px;
+
+  /* Sets the font size of the text inside the input element to 16 pixels */
+  font-size: 16px;
+
+  /* Sets the width of the input element to 100% minus 10 pixels, taking padding into account */
+  width: calc(100% - 10px);
+
+  /* Includes padding and border in the total width and height of the input element */
+  box-sizing: border-box;
+}
+
+/* Applies styling to the body of the HTML document */
+body {
+  /* Sets the font family of the text in the body to Arial or sans-serif as a fallback */
+  font-family: Arial, sans-serif;
+
+  /* Sets the background color of the body to #333 (dark gray) */
+  background-color: #333;
+
+  /* Sets the text color of the body to #fff (white) */
+  color: #fff;
+
+  /* Removes margin from the body */
+  margin: 0;
+
+  /* Removes padding from the body */
+  padding: 0;
+}
+
+/* Applies styling to input elements with type "text" and to textarea elements */
+input[type="text"],
+textarea {
+  /* Sets the width of the input or textarea element to 100% */
+  width: 100%;
+
+  /* Adds 10 pixels of padding inside the input or textarea element */
+  padding: 10px;
+
+  /* Sets the background color of the input or textarea element to #666 (dark gray) */
+  background-color: #666;
+
+  /* Removes the border from the input or textarea element */
+  border: none;
+
+  /* Sets the text color of the input or textarea element to #fff (white) */
+  color: #fff;
+
+  /* Rounds the corners of the input or textarea element to 10 pixels */
+  border-radius: 10px;
+}
+/* Add this style to left-align the labels */
+.textbox-label {
+  text-align: left;
+}
+/* Add hover effect to the button */
+/* Style the button */
+
+.text-box-container button {
+  background-color: #ff6600; /* Example background color */
+  color: #fff; /* Example text color */
+  padding: 5px; /* Example padding */
+  border: none;
+  border-radius: 5px; /* Example border-radius for rounding */
+  width: 25%;
+  cursor: pointer;
+}
+
+/* Add hover effect to the button */
+.text-box-container button:hover {
+  background-color: #ff9933; /* Example hover background color */
+}
+
+/* If button disabled */
+.text-box-container button[disabled] {
+  background-color: #999; /* Example background color for disabled state */
+  color: #ccc; /* Example text color for disabled state */
+  cursor: not-allowed;
+}
+
+/* Style the button container to align buttons horizontally */
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px; /* Adjust the margin as needed  This separates the button from the text fields above */
+}
+
+/* Style the buttons */
+.button-container button {
+  /* Add any common styling for buttons here */
+  padding: 10px;
+  margin-right: 10px;
+}
+
+/* Style the disabled button */
+.button-container button[disabled] {
+  background-color: #999; /* Example background color for disabled state */
+  color: #ccc; /* Example text color for disabled state */
+  cursor: not-allowed;
+}
+
+/* Add this style to the CSS */
+.corrections-container {
+  /* Sets the width of the input or textarea element to 100% */
+  width: 97%;
+
+  /* Adds 10 pixels of padding inside the input or textarea element */
+  padding: 11px;
+
+  /* Sets the background color of the input or textarea element to #666 (dark gray) */
+  background-color: #666;
+
+  /* Removes the border from the input or textarea element */
+  border: none;
+
+  /* Sets the text color of the input or textarea element to #fff (white) */
+  color: #fff;
+
+  /* Rounds the corners of the input or textarea element to 10 pixels */
+  border-radius: 10px;
+
+  margin-bottom: 5px;
+}
+
+.corrections-output {
+  text-align: left;/* Add any additional styles for the corrections text */
+}
+/* TextBox.css */
+
+.text-box-container .button-container button.admonition-button {
+  background-color: rgb(131, 16, 131);
+  color: white; /* Text color */
+  /* Add any additional styling as needed */
+}
+
+.text-box-container .button-container button.copy-to-clipboard {
+  background-color: rgb(9, 166, 213);
+  color: white; /* Text color */
+  /* Add any additional styling as needed */
+}

@@ -1,0 +1,1 @@
+The basic functionality of the program works, there is just no styling and it cannot export as md to obsidian

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/styles.css">
+    <title>Sentence Editor</title>
+</head>
+<body>
+  <h1>Mi Página HTML</h1>
+  <form id="myForm" action="/test" method="POST">
+    <label for="tmp_sent">Text 1:</label>
+    <input type="text" id="tmp_sent" name="Template sentence">
+    <label for="tmp_sent_cpy">Text 2:</label>
+    <input type="text" id="tmp_sent_cpy" name="Template sentence Copy">
+    <button type="submit">Send</button>
+  </form>
+  <div id="result"></div>
+  <!-- <script src="script.js", type="module"></script> -->
+  <script>
+    document.getElementById('myForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const tmp_sent = document.getElementById('tmp_sent').value;
+      const tmp_sent_cpy = document.getElementById('tmp_sent_cpy').value;
+
+      // Send a POST request to the server with JSON data.
+      fetch('/test', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ tmp_sent, tmp_sent_cpy }), // Send the text values as an object.
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Display the result in the "result" div.
+        document.getElementById('result').textContent = data;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+  </script>
+</body>
+</html>
